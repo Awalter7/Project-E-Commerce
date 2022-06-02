@@ -171,7 +171,7 @@ function App() {
                       </>
                   }>
                   </Route>
-                  <Route path="product/:productId" element={
+                  <Route path="product?=:productId" element={
                       <>
                           <Navbar toggleNavVisibility={handleToggleBigNav} totalItems={cart.total_items} />
                           <SmallNavBar toggleNavVisibility={handleToggleBigNav} NavVisibility={navVisibility}/>
