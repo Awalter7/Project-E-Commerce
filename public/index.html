@@ -25,10 +25,13 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div class="cursor"></div>
     <div id="root"></div>
+
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -39,5 +42,35 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script>
+      (function() {
+        const links = document.querySelectorAll('.nav-item');
+        const cursor = document.querySelector('.cursor');
+
+        const animateMe = function(e) {
+          const span = this.querySelector('span');
+          const { offsetX: x, offsetY: y } = e,
+                  { offsetWidth: width, offsetHeight: height } = this;
+
+          move = 20;
+          xMove = x / width * (move * 2) - move;
+          yMove = y / height * (move * 2) - move;
+
+          span.style.transform = `translate(${xMove}px, ${yMove}px)`;
+
+          if (e.type === 'mouseleave') span.style.transform = '';
+        };
+
+        const editCursor = e => {
+          const { clientX: x, clientY: y } = e;
+          cursor.style.left = x + 'px';
+          cursor.style.top = y + 'px';
+        };
+
+        links.forEach(link => link.addEventListener('mousemove', animateMe));
+        links.forEach(link => link.addEventListener('mouseleave', animateMe));
+        window.addEventListener('mousemove', editCursor);
+      })();
+      </script>
   </body>
 </html>

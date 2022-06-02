@@ -13,6 +13,7 @@
   }
 }
 
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -34,5 +35,62 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+.swiper-button-disabled::after,  .swiper-button-prev::after, .swiper-button-next::after  { color: #caa989; }
+.swiper-pagination span{background-color: #caa989;}
+
+a{
+  text-decoration: none;
+}
+
+.cursor {
+  position: fixed;
+  pointer-events: none;
+  background-color: #f6f6f6;
+  mix-blend-mode: difference;
+  border-radius: 50%;
+  transition: transform 300ms;
+  transform: translate(-50%, -50%) scale(3);
+  padding: 0.6rem;
+  z-index: 1000;
+}
+html{
+  cursor: none;
+}
+.MuiTextField-root label{
+  z-index: 1;
+  color: black;
+  background-color: white;
+  margin: 10px;
+}
+.MuiInput-formControl{
+  z-index: 0;
+  padding: 9px;
+  border: 1px solid #d9d9d9;
+  border-radius: 5px;
+  color: black;
+}
+.MuiInputLabel-shrink::after{
+  position: relative;
+  top: 20px;
+  margin-bottom: 10px;
+}
+animate-on-scroll-1{
+  animation: 2s animate-on-scroll forwards;
+}
+@keyFrames animate-on-scroll{
+  0%{
+    position: relative;
+    top: -50px;
+    opacity: 0;
+  }
+  99%{
+    position: relative;
+    top: 0px;
+    opacity: 1;
+  }
+  100%{
+    position: unset;
   }
 }

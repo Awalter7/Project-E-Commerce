@@ -5,9 +5,20 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100vw;
 }
-
+html{
+  width: 100%;
+  overflow-x: hidden;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.navItem{
+  color: white;
+}
+.navItem:hover{
+  background-color: #feae66;
+  color: black;
 }

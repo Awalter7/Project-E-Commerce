@@ -1,0 +1,6 @@
+export { default as Header } from "../Header/Header"
+export { default as Choose } from "../Choose/Choose"
+export { default as ProductSlider } from "../Slider/ProductSlider"
+export { default as Footer } from "../../Footer/FooterContainer"
+export { default as VideoLoader } from "../Loader/VideoLoader"
+export { default as Social } from "../Social/Social"
